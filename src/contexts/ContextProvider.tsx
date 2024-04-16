@@ -15,7 +15,8 @@ interface StateContextType {
     setColor: Function,
     setMode: ChangeEventHandler<HTMLInputElement>,
     themeSettings: boolean,
-    setThemeSettings: React.Dispatch<React.SetStateAction<boolean>>
+    setThemeSettings: React.Dispatch<React.SetStateAction<boolean>>,
+    initialState: initialStateType,
 }
 
 interface StateContextProps {
@@ -70,6 +71,7 @@ export const ContextProvider = ({children}: StateContextProps) => {
              currentColor, setCurrentColor, setColor,
              currentMode, setCurrentMode, setMode,
              themeSettings, setThemeSettings,
+             initialState
              }}>
             {children}
         </StateContext.Provider>
